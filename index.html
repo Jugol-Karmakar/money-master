@@ -5,6 +5,102 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bank Balance</title>
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- tailwindcss -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
   </head>
-  <body></body>
+  <body>
+    <section class="mb-10">
+      <!-- <h1 class="text-5xl font-bold text-center my-10">Bank Balance</h1>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="w-11/12 ml-12">
+          <img src="images/balance.jpg" alt="money-image" />
+        </div>
+
+        <div class="bg-slate-200 w-11/12">
+          <h2 class="text-2xl font-semibold text-center pt-10">Income</h2>
+          <div class="flex justify-center items-center my-6">
+            <h4 class="text-xl font-semibold">Income:</h4>
+            <input class="ml-4 px-3 py-1 text-lg" type="text" name="" id="" />
+          </div>
+          <h2 class="text-2xl font-semibold text-center pt-10">Expenses</h2>
+          <div class="flex justify-center items-center my-6">
+            <h4 class="text-xl font-semibold">Food:</h4>
+            <input class="ml-4 px-3 py-1 text-lg" type="text" name="" id="" />
+          </div>
+          <div class="flex justify-center items-center my-6">
+            <h4 class="text-xl font-semibold">Rent:</h4>
+            <input class="ml-5 px-3 py-1 text-lg" type="text" name="" id="" />
+          </div>
+          <div class="flex justify-center items-center my-6">
+            <h4 class="text-xl font-semibold pr-6">Clothes:</h4>
+            <input class="mr-7 px-3 py-1 text-lg" type="text" name="" id="" />
+          </div>
+
+          <button
+            id=""
+            class="block bg-sky-500 font-semibold text-xl rounded text-white py-2 px-12 mx-auto"
+          >
+            Calculate
+          </button>
+        </div>
+      </div> -->
+      <h1 class="fs-4">Bank Balance</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <img
+              class="img-fluid h-100"
+              src="images/balance.jpg"
+              alt="money-image"
+            />
+          </div>
+          <div class="col-lg-6 left-bg-primary text-light h-100">
+            <h2 class="fw-bold fs-2 text-center my-4">Income</h2>
+            <div class="d-flex justify-content-center mt-5">
+              <h4>Income:</h4>
+              <input class="ms-2 px-2" type="text" name="" id="" />
+            </div>
+            <h2 class="fs-2 fw-bold text-center my-4">Expenses</h2>
+            <div class="d-flex justify-content-center mt-3">
+              <h4 class="">Food:</h4>
+              <input class="ms-4 px-2" type="text" name="" id="" />
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+              <h4 class="">Rent:</h4>
+              <input class="ms-4 px-2" type="text" name="" id="" />
+            </div>
+            <div class="d-flex justify-content-center mt-3 me-4">
+              <h4 class="">Clothes:</h4>
+              <input class="ms-3 px-2" type="text" name="" id="" />
+            </div>
+            <button id="" class="mx-auto cal-btn-warning">Calculate</button>
+            <div class="py-4">
+              <h1 class="fw-bold fs-2 text-center">Total Expenses: 5500</h1>
+              <h2 class="fw-bold fs-2 text-center">Balance: 4500</h2>
+            </div>
+            <div class="d-flex justify-content-center align-items-center mt-3">
+              <h4 class="mx-2">Clothes:</h4>
+              <input class="w-25 mx-2" type="text" name="" id="" />
+              <span class="mx-2">%</span>
+              <button id="" class="mx-2 btn btn-warning">Calculate</button>
+            </div>
+            <div>
+              <h2>Saving Amount: 2000</h2>
+              <h2>Remaining Balance: 2500</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
