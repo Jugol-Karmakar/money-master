@@ -1,12 +1,16 @@
-function expensesNumber() {
+function getInputNumber() {
   const foodInput = document.getElementById("food-field");
   const foodvalue = parseInt(foodInput.value);
   const rentInput = document.getElementById("rent-field");
   const rentValue = parseInt(rentInput.value);
   const clothInput = document.getElementById("cloth-field");
   const clothValue = parseInt(clothInput.value);
-
   const totalCost = foodvalue + rentValue + clothValue;
+  return totalCost;
+}
+
+function expensesNumber() {
+  const totalCost = getInputNumber();
   const totalExpenses = document.getElementById("total-expenses");
   totalExpenses.innerText = totalCost;
 
