@@ -1,37 +1,5 @@
-.left-bg-primary {
-  background-color: #207398;
-}
-
-.cal-btn-warning {
-  background-color: #4dd637;
-  padding: 10px 40px;
-  border-radius: 5px;
-  border: none;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 700;
-  display: block;
-  margin-top: 30px;
-}
-
-.save-btn-warning {
-  background-color: #4dd637;
-  padding: 10px 40px;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.message {
-  background-color: black;
-  color: red;
-  padding: 5px 15px;
-  text-align: center;
-  border-radius: 10px;
-  font-weight: 500;
-  display: none;
-  position: absolute;
-  margin-top: 5px;
+/*  */
+body {
+  background-color: rgb(235, 235, 235);
+  height: 1200px;
 }
