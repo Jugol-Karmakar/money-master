@@ -1,27 +1,36 @@
-// get input
+// Get the input value using function
 function getInputValue(inputID) {
   const inputField = document.getElementById(inputID);
   const inputFieldText = inputField.value;
   const amountValue = parseFloat(inputFieldText);
+
+  // inputField.value = "";
   return amountValue;
 }
 
-// Get expense
-function getExpenseTotal() {
+// Error Handling Function
+function handleError(errorID, message) {
+  const errorText = document.getElementById(errorID);
+  errorText.innerHTML = message;
+}
+
+// Get expense using function
+function getExpense() {
   const foodCost = getInputValue("food-field");
   const rentCost = getInputValue("rent-field");
   const clothesCost = getInputValue("clothes-field");
 
+  // Check whether number or not
   if (!isNaN(foodCost) && !isNaN(rentCost) && !isNaN(clothesCost)) {
     // Check whether negative or not
     if (foodCost < 0) {
-      errorMessage("food-error", "Can't be negative");
+      handleError("food-error", "Can't be negative");
     }
     if (rentCost < 0) {
-      errorMessage("rent-error", "Can't be negative");
+      handleError("rent-error", "Can't be negative");
     }
     if (clothesCost < 0) {
-      errorMessage("clothes-error", "Can't be negative");
+      handleError("clothes-error", "Can't be negative");
     }
     if (foodCost >= 0 && rentCost >= 0 && clothesCost >= 0) {
       return foodCost + rentCost + clothesCost;
@@ -31,32 +40,26 @@ function getExpenseTotal() {
   } else {
     // Error message when not a number
     if (isNaN(foodCost)) {
-      errorMessage("food-error", "Not a number");
+      handleError("food-error", "Not a number");
     }
     if (isNaN(rentCost)) {
-      errorMessage("rent-error", "Not a number");
+      handleError("rent-error", "Not a number");
     }
     if (isNaN(clothesCost)) {
-      errorMessage("clothes-error", "Not a number");
+      handleError("clothes-error", "Not a number");
     }
   }
 }
 
-// Error Handler
-function errorMessage(errorID, message) {
-  const errorText = document.getElementById(errorID);
-  errorText.innerHTML = message;
-}
-
-function getBalanceTotal(total, deduct, isSavings) {
-  // Handling negative value
+function getBalance(total, deduct, isSavings) {
+  // Handling negative income
   if (total < 0 && !isSavings) {
-    errorMessage("income-error", "Can't be negative");
+    handleError("income-error", "Can't be negative");
   }
 
-  //  non number income
+  // Handling non number income
   if (isNaN(total)) {
-    errorMessage("income-error", "Not a number");
+    handleError("income-error", "Not a number");
   }
 
   if (total > deduct && total >= 0 && !isNaN(total)) {
@@ -64,10 +67,10 @@ function getBalanceTotal(total, deduct, isSavings) {
     return balance;
   } else {
     if (isSavings) {
-      errorMessage("savings-balance-error", "Not Enough Balance");
+      handleError("savings-balance-error", "Not Enough Balance");
       return 0;
     } else {
-      errorMessage("balance-error", "Not Enough Balance");
+      handleError("balance-error", "Not Enough Balance");
       return 0;
     }
   }
@@ -80,8 +83,8 @@ function setValue(amountID, value) {
 
 document.getElementById("calculate-btn").addEventListener("click", function () {
   const income = getInputValue("income-field");
-  const expense = getExpenseTotalTotal();
-  const balance = getBalanceTotal(income, expense, false);
+  const expense = getExpense();
+  const balance = getBalance(income, expense, false);
 
   setValue("expense-amount", expense);
   setValue("balance-amount", balance);
@@ -92,10 +95,10 @@ document.getElementById("save-btn").addEventListener("click", function () {
   const percent = getInputValue("percent-field");
 
   if (!isNaN(percent) && percent > 0 && percent <= 100) {
-    const expense = getExpenseTotal();
+    const expense = getExpense();
     const percentOfIncome = income * (percent / 100);
-    const balanceBeforeSaving = getBalanceTotal(income, expense, false);
-    const balanceAfterSaving = getBalanceTotal(
+    const balanceBeforeSaving = getBalance(income, expense, false);
+    const balanceAfterSaving = getBalance(
       balanceBeforeSaving,
       percentOfIncome,
       true
@@ -106,6 +109,9 @@ document.getElementById("save-btn").addEventListener("click", function () {
     }
     setValue("remaining-amount", balanceAfterSaving);
   } else {
-    errorMessage("percent-error", "Invalid percentage");
+    handleError("percent-error", "Invalid percentage");
   }
 });
+
+// Values can't be negative
+// Expense can't be greater than
